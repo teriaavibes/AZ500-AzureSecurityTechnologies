@@ -42,7 +42,7 @@ In this lab, you will complete the following exercises:
 
 ## Lab files:
 
-- **\\Allfiles\\Labs\\10\\az-500-10_azuredeploy.json**
+- **\\Allfiles\\Labs\\10\\az-500-10_baseinfra.json**
 
 - **\\Allfiles\\Labs\\10\\program.cs**
 
@@ -66,7 +66,7 @@ In this task, you will deploy an Azure VM, which will automatically install Visu
 
 3. On the **Custom deployment** blade, click the **Build your own template in the editor** option.
 
-4. On the **Edit template** blade, click **Load file**, locate the **\\Allfiles\\Labs\\10\\az-500-10_azuredeploy.json** file and click **Open**.
+4. On the **Edit template** blade, click **Load file**, locate the **\\Allfiles\\Labs\\10\\az-500-10_baseinfra.json** file and click **Open**.
 
 5. On the **Edit template** blade, click **Save**.
 
