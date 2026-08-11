@@ -353,6 +353,16 @@ resource virtualNetworks_Test_FW_VN_name_resource 'Microsoft.Network/virtualNetw
           delegations: []
         }
       }
+      {
+        name: 'AzureFirewallManagementSubnet'
+        etag: 'W/"53a57980-9a0c-46fa-82fb-5939986c3aab"'
+        properties: {
+          provisioningState: 'Succeeded'
+          addressPrefix: '10.0.10.0/26'
+          serviceEndpoints: []
+          delegations: []
+        }
+      }
     ]
     virtualNetworkPeerings: []
     enableDdosProtection: false
@@ -365,13 +375,13 @@ resource virtualMachines_Srv_Jump_name_resource 'Microsoft.Compute/virtualMachin
   location: location
   properties: {
     hardwareProfile: {
-      vmSize: 'Standard_DS1_v2'
+      vmSize: 'Standard_D2s_v7'
     }
     storageProfile: {
       imageReference: {
         publisher: 'MicrosoftWindowsServer'
         offer: 'WindowsServer'
-        sku: '2016-Datacenter'
+        sku: '2019-datacenter-gensecond'
         version: 'latest'
       }
       osDisk: {
@@ -412,13 +422,13 @@ resource virtualMachines_Srv_Work_name_resource 'Microsoft.Compute/virtualMachin
   location: location
   properties: {
     hardwareProfile: {
-      vmSize: 'Standard_DS1_v2'
+      vmSize: 'Standard_D2s_v7'
     }
     storageProfile: {
       imageReference: {
         publisher: 'MicrosoftWindowsServer'
         offer: 'WindowsServer'
-        sku: '2016-Datacenter'
+        sku: '2019-datacenter-gensecond'
         version: 'latest'
       }
       osDisk: {
