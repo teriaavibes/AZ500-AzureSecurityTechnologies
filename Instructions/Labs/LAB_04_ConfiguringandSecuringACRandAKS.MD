@@ -310,17 +310,38 @@ In this task,  you will download the Manifest files, edit the YAML file, and app
 
 In this task, verify the container can be accessed externally using the public IP address.
 
-1. In the Bash session within the Cloud Shell pane, run the following to retrieve information about the nginxexternal service including name, type, IP addresses, and ports. 
+1. In the Bash session within the Cloud Shell pane, wait for the deployment to become available:
+
+    ```sh
+    kubectl rollout status deployment/nginxexternal --timeout=5m
+    ```
+
+1. Verify that the service has at least one ready endpoint:
+
+    ```sh
+    kubectl get endpoints nginxexternal
+    ```
+
+    > **Note**: Do not continue until the **ENDPOINTS** column contains an IP address and port. If it shows **<none>**, run `kubectl get pods` and resolve any image-pull or readiness error before testing the public IP.
+
+1. Run the following to retrieve information about the `nginxexternal` service, including its name, type, IP addresses, and ports:
 
     ```sh
     kubectl get service nginxexternal
     ```
 
-2. In the Bash session within the Cloud Shell pane, review the output and record the value in the External-IP column. You will need it in the next step. 
+1. Wait until the **EXTERNAL-IP** column contains an IP address. Then capture and test that address from Cloud Shell:
 
-3. Open a new browser tab and browse to the IP address you identified in the previous step.
+    ```sh
+    EXTERNAL_IP=$(kubectl get service nginxexternal --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    curl --retry 12 --retry-delay 10 --retry-connrefused --max-time 15 "http://$EXTERNAL_IP"
+    ```
 
-4. Ensure the **Welcome to nginx!** page displays. 
+    Confirm the response contains **Welcome to nginx!**.
+
+1. Open a new browser tab and browse to `http://<EXTERNAL-IP>`, replacing `<EXTERNAL-IP>` with the address you captured.
+
+1. Ensure the **Welcome to nginx!** page displays.
 
 #### Task 7: Deploy an internal service to AKS
 
