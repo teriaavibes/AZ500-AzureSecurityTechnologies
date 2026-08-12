@@ -217,7 +217,7 @@ In this task, you will create a virtual machine to use as a web server.
    |Availability options|**No infrastructure redundancy required**
    |Security type|**Standard**
    |Image|**Windows Server 2022 Datacenter: Azure Edition- x64 Gen2**|
-   |Size|**Standard D2s v3**|
+   |Size|**Standard D2s v7**|
    |Username|**Student**|
    |Password|**Please create your own password and record it for future reference in subsequent labs**|
    |Confirm password|**Retype your password**|
@@ -257,7 +257,7 @@ In this task, you will create a virtual machine to use as a management server.
    |Availability options|**No infrastructure redundancy required**
    |Security type|**Standard**
    |Image|**Windows Server 2022 Datacenter: Azure Edition - x64 Gen2**|
-   |Size|**Standard D2s v3**|
+   |Size|**Standard D2s v7**|
    |Username|**Student**|
    |Password|**Please use your personal password created in Lab 02 > Exercise 2 > Task 1 > Step 3.**|
    |Public inbound ports|**None**|
