@@ -1,3 +1,5 @@
+**This course will be retired on 2026-8-31. Once course is retired, all GitHub repos will be removed. Thank you!**
+
 # AZ-500: Microsoft Azure Security Technologies
 
 - **[Link to labs (HTML format)](https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/)**
